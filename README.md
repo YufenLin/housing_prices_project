@@ -55,9 +55,10 @@ It depends where the home is located. A home by Lake Sammamish can sell for an a
 * Use OneHotEncoder to encode categorical features as a one-hot numeric array;
 * Observe sale price distribution and drop the unreasonable sale price data(less than 50,000 USD);
 * Check 3 claims about housing prices 
-1. Higher square footage increases home sale price<sup>1, 2</sup>
-2. Having a porch increases home sale price<sup>3, 4</sup>
-3. Having a beachfront or lakefront increases home sale price<sup>5</sup>
+
+    1. Higher square footage increases home sale price<sup>1, 2</sup>
+    2. Having a porch increases home sale price<sup>3, 4</sup>
+    3. Having a beachfront or lakefront increases home sale price<sup>5</sup>
 
 * Adding more features to the model and check there is no high correlation between features.
     
@@ -67,34 +68,26 @@ It depends where the home is located. A home by Lake Sammamish can sell for an a
 ## DELIVERABLES
 * [`src/`](/src) directory stores all relevant source code.
 * [`data/`](data) stores all relevant raw and processed data files.
-* [`/references/figures`](/references/figures) includes all relevant visualization figures.
 * [`src/sql`](/src/sql) includes all relevant SQL queries.
-* [`references`](/references) stores useful references
+* [`references`](/references) stores useful references.
+* [`references/figures`](/references/figures) includes all relevant visualization figures.
 
-## Setup Instructions
 
-To download the necessary data, please run the following command:
 
-```bash
-# installs necessary requirements and downloads necessary data
-# note: this may take anywhere from 10-20 minutes
-sh setup.sh
-```
+### `linreg-env` conda environment
 
-### `oy-env` conda environment
-
-This project relies on you using the [`environment.yml`](environment.yml) file to recreate the `oy-env` conda environment. To do so, please run the following commands:
+This project relies on you using the [`environment.yml`](environment.yml) file to recreate the `linreg-env` conda environment. To do so, please run the following commands:
 
 ```bash
 # create the oy-env conda environment
 # note: this make take anywhere from 10-20 minutes
 conda env create -f environment.yml
 
-# activate the oy-env conda environment
-conda activate oy-env
+# activate the linreg-env conda environment
+conda activate linreg-env
 
-# make oy-env available to you as a kernel in jupyter
-python -m ipykernel install --user --name oy-env --display-name "oy-env"
+# make linreg-env available to you as a kernel in jupyter
+python -m ipykernel install --user --name linreg-env --display-name "linreg-env"
 ```
 
 ## Citations
