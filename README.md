@@ -8,16 +8,16 @@ This project offers an updated estimate of the number of Opportunity Youth in So
 Many factors influence the saleprice of homes. According to expert opinions (cited below), specifically square footage, porches, and waterfront property increases a home's saleprice. 
 
 From our model, we have determined that several factors increase the salesprice of a home.
-    +Square foot of total living
-    +Waterfront footage
-    +Traffic noise
-    +Full baths
-    +Additional cost
-    +Sewer system
-    +Inadequate parking 
-    +Age of house
-    +Porch
-    +Waterfront location
+    + Square foot of total living
+    + Waterfront footage
+    + Traffic noise
+    + Full baths
+    + Additional cost
+    + Sewer system
+    + Inadequate parking 
+    + Age of house
+    + Porch
+    + Waterfront location
 
 
 ### The higher square footage increases home sale price.
