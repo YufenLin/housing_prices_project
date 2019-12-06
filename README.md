@@ -1,6 +1,6 @@
-# Housing prices in King County in 2018
+# King County home sale prices in 2018
 
-This project offers an updated estimate of the number of Opportunity Youth in South King County using the 2017 5-year American Community Survey [(ACS)](https://www.census.gov/programs-surveys/acs/about.html) Public Use Microdata Survey [(PUMS)](https://www.census.gov/programs-surveys/acs/technical-documentation/pums.html).
+
 
 ## Findings
 
@@ -48,9 +48,9 @@ It depends where the home is located. A home by Lake Sammamish can sell for an a
 
 ## Process
 * Use POSTGRES SQL engine to query residential house price
- + Sale Price more than 0
- + Principal Use is residential
- + ZipCode is not null
+    + Sale Price more than 0
+    + Principal Use is residential
+    + ZipCode is not null
  
 * Use OneHotEncoder to encode categorical features as a one-hot numeric array;
 * Observe sale price distribution and drop the unreasonable sale price data(less than 50,000 USD);
@@ -59,24 +59,15 @@ It depends where the home is located. A home by Lake Sammamish can sell for an a
 2. Having a porch increases home sale price<sup>3, 4</sup>
 3. Having a beachfront or lakefront increases home sale price<sup>5</sup>
 
-* Adding more features to the model and check there is no high correlation between features. The features in our model:
-    1. Square foot of total living
-    2. Waterfront footage
-    3. Traffic noise
-    4. Full baths
-    5. Additional cost
-    6. Sewer system
-    7. Inadequate parking 
-    8. Age of house
-    9. Porch
-    10. Waterfront location
+* Adding more features to the model and check there is no high correlation between features.
+    
 * Visualize error distribution of the model, predicted sale price distribution, predicted and actual sale price distribution
 
 
 ## DELIVERABLES
 * [`src/`](/src) directory stores all relevant source code.
 * [`data/`](data) stores all relevant raw and processed data files.
-* [`src/visualization/`](src/visualization/) includes all relevant visualization figures.
+* [`/references/figures`](/references/figures) includes all relevant visualization figures.
 * [`src/sql`](/src/sql) includes all relevant SQL queries.
 * [`references`](/references) stores useful references
 
