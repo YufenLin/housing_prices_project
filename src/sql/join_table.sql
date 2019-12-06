@@ -6,8 +6,8 @@
     Note: TODO: 
 */
 
--- SELECT sales.*, building.*, parcel.*
-SELECT COUNT(*)
+SELECT sales.*, building.*, parcel.*
+-- SELECT COUNT(*)
 FROM real_property_sales AS sales
 INNER JOIN parcel
 USING (major, minor)
