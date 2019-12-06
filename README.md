@@ -39,24 +39,38 @@ It depends where the home is located. A home by Lake Sammamish can sell for an a
     + Parcel
 * Create housing_prices [PostgreSQL database](https://www.postgresql.org/) ;
 * Query residential house data with SQL;
-* Using Jupyter Notebook to execute sql and export residential house csv file.
+* Using python to execute sql and export [residential house csv file](/data/processed/residential_prices.csv).
 
 * Using python to build a linear regression model with a target variable of home sale price with our note and data visualization. 
     + To deal with categorical variables, use OneHotEncoder in [sklearn](https://scikit-learn.org/stable/)
     + To build a linear regression model, use [statsmodels](https://pypi.org/project/statsmodels/)
-    + To visualize descriptive statistics, use [Matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) 
+    + To visualize descriptive statistics, use [matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) 
 
 ## Process
-* A map that visualizes which parts of King County are a part of South King County;
-* Estimated number of opportunity youth in South King County from US Census PUMS data in 2017([2017 PUMS README](references/ACS2013_2017_PUMS_README.pdf), [2017 PUMS Data Dictionary](references/PUMS_Data_Dictionary_2017.pdf)). Variables includes:                
-    + Age (AGEP)
-    + Educational attainment (SCHL)
-    + Employment status recode(ESR)
-    + Housing unit/GQ person serial number (SERIALNO)
-    + Person number (SPORDER) 
-    + Person’s weight (PWGTP)(note: this is statistical weight)
-    + PUMA is in South King County. Public use microdata area code (PUMA) based on 2010 Census definition    
-    + School enrollment (SCH)
+* Use POSTGRES SQL engine to query residential house price
+ + Sale Price more than 0
+ + Principal Use is residential
+ + ZipCode is not null
+ 
+* Use OneHotEncoder to encode categorical features as a one-hot numeric array;
+* Observe sale price distribution and drop the unreasonable sale price data(less than 50,000 USD);
+* Check 3 claims about housing prices 
+1. Higher square footage increases home sale price<sup>1, 2</sup>
+2. Having a porch increases home sale price<sup>3, 4</sup>
+3. Having a beachfront or lakefront increases home sale price<sup>5</sup>
+
+* Adding more features to the model and check there is no high correlation between features. The features in our model:
+    1. Square foot of total living
+    2. Waterfront footage
+    3. Traffic noise
+    4. Full baths
+    5. Additional cost
+    6. Sewer system
+    7. Inadequate parking 
+    8. Age of house
+    9. Porch
+    10. Waterfront location
+* Visualize error distribution of the model, predicted sale price distribution, predicted and actual sale price distribution
 
 
 ## DELIVERABLES
@@ -64,6 +78,7 @@ It depends where the home is located. A home by Lake Sammamish can sell for an a
 * [`data/`](data) stores all relevant raw and processed data files.
 * [`src/visualization/`](src/visualization/) includes all relevant visualization figures.
 * [`src/sql`](/src/sql) includes all relevant SQL queries.
+* [`references`](/references) stores useful references
 
 ## Setup Instructions
 
@@ -93,10 +108,12 @@ python -m ipykernel install --user --name oy-env --display-name "oy-env"
 
 ## Citations
 
-* <sup>1</sup> Yohalem, N., Cooley, S. 2016. “Opportunity Youth in the Road Map Project Region”. Community Center for Education Results. Available at: https://bit.ly/2P2XRF3. 
-
-* <sup>2</sup> Anderson, T., Braga, B., Derrick-Mills, T., Dodkowitz, A., Peters, E., Runes, C., and Winkler, M. 2019. “New Insights into the Back on Track Model’s Effects on Opportunity Youth Outcomes”. Urban Institute. Available at: https://bit.ly/2BuCLr1. 
-
-* <sup>3</sup> Seattle Region Partnership. 2016. “King County Opportunity Youth Overview: Demographics of opportunity youth and systemic barriers to employment”. https://bit.ly/2oRGz37. 
-
-* <sup>4</sup> Morton, N. 2019. “Nearly 19,000 youth in King County are neither working nor in school. How one Seattle nonprofit is changing that.” The Seattle Times. Available at: https://bit.ly/2W5EufR. 
+1. Gomez, J. 2019. "8 critical factors that influence a home’s value". OpenDoor. Available at: https://www.opendoor.com/w/blog/factors-that-influence-home-value
+2. Buczynski, B. 2019. "5 Proven Ways to Increase Home Value". NerdWallet. Available at: https://www.nerdwallet.com/blog/mortgages/how-to-increase-home-value/
+3. Taylor, A.B. 2019. "11 Features That Will Sell Your Home Faster". Kiplinger. Available at: https://www.kiplinger.com/slideshow/real-estate/T010-S001-home-features-today-s-buyers-want-most/index.html
+4. Crow, S. 2019. "50 Clever Ways to Instantly Add Value to Your Home". BestLife. Available at: https://bestlifeonline.com/home-value-upgrades/
+5. Unknown author. 2018. "5 Features That Make A Property Valuable". House Flipping School. Available at: https://houseflippingschool.com/5-features-valuable/
+6. Ludwick, R. 2019. Personal correspondence.
+7. Yeh, K. "Duplex vs. Single-Family Home: What's the difference and which one should I invest in?". Homebuyer's School by Brookfield Residential. Available at: https://stories.brookfieldresidential.com/homebuyersschool/duplex-vs.-single-family-home-whats-the-difference-and-which-one-should-i-invest-in
+8. "This is What Could Happen to Your Resale Value if You Add an Accessory Dwelling Unit (ADU) to Your Silicon Valley Property". Acton ADU. Available at: https://actonadu.com/blog/this-is-what-could-happen-to-your-resale-value-if-you-add-an-accessory-dwelling-unit-adu-to-your-silicon-valley-property
+9. "What is the CRISP-DM Methodology?" Smart Vision Europe. Available at: https://www.sv-europe.com/crisp-dm-methodology/
