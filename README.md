@@ -4,7 +4,7 @@
 
 ## Findings
 
-Many factors influence the saleprice of homes. According to expert opinions (cited below), specifically square footage, porches, and waterfront property increases a home's saleprice. 
+Many factors influence the saleprice of homes. According to expert opinions (cited below), specifically square footage, porches, and waterfront property increase a home's saleprice. 
 
 From our model, we have determined that several factors increase the salesprice of a home.
 
@@ -66,11 +66,10 @@ It depends where the home is located. A home by Lake Sammamish can sell for an a
 
 
 ## DELIVERABLES
-* [`src/`](/src) directory stores all relevant source code.
-* [`data/`](data) stores all relevant raw and processed data files.
-* [`src/sql`](/src/sql) includes all relevant SQL queries.
-* [`references`](/references) stores useful references.
-* [`references/figures`](/references/figures) includes all relevant visualization figures.
+* [`/src/`](/src) directory stores all relevant source code.
+* [`/data/`](data) stores all relevant raw and processed data files.
+* [`/references`](/references) stores useful references.
+* [`/references/figures`](/references/figures) includes all relevant visualization figures.
 
 
 
