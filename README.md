@@ -33,24 +33,18 @@ It depends where the home is located. A home by Lake Sammamish can sell for an a
 
 ## Methodology
 
-* Download data from the [King County House Sales dataset](https://info.kingcounty.gov/assessor/DataDownload/default.aspx);
-  The tables required for this analysis are:
- - Real Property Sales
- - Residential Building
- - Parcel
-* Create [PostgreSQL database](https://www.postgresql.org/) housing_prices;
+* Download data from the [King County House Sales dataset](https://info.kingcounty.gov/assessor/DataDownload/default.aspx).The tables required for this analysis are:
+    + Real Property Sales
+    + Residential Building
+    + Parcel
+* Create housing_prices [PostgreSQL database](https://www.postgresql.org/) ;
 * Query residential house data with SQL;
-* Using Jupyter Notebook to execute sql and export residential house data csv file.
+* Using Jupyter Notebook to execute sql and export residential house csv file.
 
 * Using python to build a linear regression model with a target variable of home sale price with our note and data visualization. 
-To deal with categorical variables, use OneHotEncoder in [sklearn](https://scikit-learn.org/stable/)
-To build a linear regression model, use [statsmodels](https://pypi.org/project/statsmodels/)
-To visualize descriptive statistics, use [Matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) 
-
-* Map Figure Generation
-    + Map data obtained from US government website, Shape file of Washington State PUMA regions
-    + GeoPandas library used to map the shape file
-    + Data obtained from PostgreSQL database used to populate choropleth maps of Opportunity Youth and job opportunities in South King County
+    + To deal with categorical variables, use OneHotEncoder in [sklearn](https://scikit-learn.org/stable/)
+    + To build a linear regression model, use [statsmodels](https://pypi.org/project/statsmodels/)
+    + To visualize descriptive statistics, use [Matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) 
 
 ## Process
 * A map that visualizes which parts of King County are a part of South King County;
