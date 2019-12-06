@@ -1,5 +1,4 @@
-# housing_prices_project
-project 2: Housing prices in King County in 2018
+# Housing prices in King County in 2018
 
 This project offers an updated estimate of the number of Opportunity Youth in South King County using the 2017 5-year American Community Survey [(ACS)](https://www.census.gov/programs-surveys/acs/about.html) Public Use Microdata Survey [(PUMS)](https://www.census.gov/programs-surveys/acs/technical-documentation/pums.html).
 
@@ -8,16 +7,17 @@ This project offers an updated estimate of the number of Opportunity Youth in So
 Many factors influence the saleprice of homes. According to expert opinions (cited below), specifically square footage, porches, and waterfront property increases a home's saleprice. 
 
 From our model, we have determined that several factors increase the salesprice of a home.
-    + Square foot of total living
-    + Waterfront footage
-    + Traffic noise
-    + Full baths
-    + Additional cost
-    + Sewer system
-    + Inadequate parking 
-    + Age of house
-    + Porch
-    + Waterfront location
+
+    1. Square foot of total living
+    2. Waterfront footage
+    3. Traffic noise
+    4. Full baths
+    5. Additional cost
+    6. Sewer system
+    7. Inadequate parking 
+    8. Age of house
+    9. Porch
+    10. Waterfront location
 
 
 ### The higher square footage increases home sale price.
@@ -30,15 +30,23 @@ Our model predicts that having a porch increases saleprice by $36,000.
 It depends where the home is located. A home by Lake Sammamish can sell for an additional $3.5 million while a home by the Puget Sound has a decreased value and is predicted to sell for $47,000 less.
 
 
-These trends may indicate that current projects aimed at younger Opportunity Youth have helped positively in aiding more to graduate high school. However since we are seeing less Opportunity Youth enter college or graduate college, this might be an opportunity for more targeted aid aimed at Opportunity Youth who have graduated high school, but have not entered the workforce or entered/finished college.
-* A possible trend we have identified is that the percentage of Opportunity Youth with a college degree (Associates degree or higher) has decreased by 6% (total between all age groups) when compared to 2014 figures;
-* We have also found that in the 19-21 age group, college enrollment has decreased by 3% relative to 2014;
-* Another trend we have identified is that the percentage of Opportunity Youth that have completed High School (or obtained a GED) has increased by 6%.
 
 ## Methodology
 
-* Query data from a [PostgreSQL database](https://www.postgresql.org/) of US Census PUMA regions;
-* Using Jupyter Notebook to combine our code, our notes, and data visualization. To visualize descriptive statistics, use [Matplotlib](https://matplotlib.org/) to create bar charts and [GeoPandas](http://geopandas.org/) to create population choropleth map;
+* Download data from the [King County House Sales dataset](https://info.kingcounty.gov/assessor/DataDownload/default.aspx);
+  The tables required for this analysis are:
+ - Real Property Sales
+ - Residential Building
+ - Parcel
+* Create [PostgreSQL database](https://www.postgresql.org/) housing_prices;
+* Query residential house data with SQL;
+* Using Jupyter Notebook to execute sql and export residential house data csv file.
+
+* Using python to build a linear regression model with a target variable of home sale price with our note and data visualization. 
+To deal with categorical variables, use OneHotEncoder in [sklearn](https://scikit-learn.org/stable/)
+To build a linear regression model, use [statsmodels](https://pypi.org/project/statsmodels/)
+To visualize descriptive statistics, use [Matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) 
+
 * Map Figure Generation
     + Map data obtained from US government website, Shape file of Washington State PUMA regions
     + GeoPandas library used to map the shape file
